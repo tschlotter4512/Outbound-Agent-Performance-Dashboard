@@ -87,12 +87,12 @@ canvas{display:block;width:100%;cursor:crosshair}
   <span id="hdr-week"></span>
 </header>
 <div class="tabs">
-  <div class="tab active" data-tab="agents">By Agent</div>
-  <div class="tab" data-tab="summary">Summary</div>
+  <div class="tab active" data-tab="summary">Summary</div>
+  <div class="tab" data-tab="agents">By Agent</div>
 </div>
 
 <!-- BY AGENT -->
-<div id="agents-page" class="page active">
+<div id="agents-page" class="page">
   <div class="controls">
     <div style="display:flex;align-items:center;gap:6px">
       <span class="ctrl-label">Group</span>
@@ -113,7 +113,7 @@ canvas{display:block;width:100%;cursor:crosshair}
 </div>
 
 <!-- SUMMARY -->
-<div id="summary-page" class="page">
+<div id="summary-page" class="page active">
   <div class="controls">
     <div style="display:flex;align-items:center;gap:6px">
       <span class="ctrl-label">Week</span>
@@ -343,7 +343,7 @@ document.querySelectorAll('[data-grp]').forEach(b=>b.onclick=()=>{
 window.addEventListener('resize',()=>{if(document.getElementById('summary-page').classList.contains('active'))bsc();});
 wbs('week-selector',()=>bat());
 wbs('sum-week-selector',()=>buildSummary());
-rwb();bat();
+rwb();buildSummary();
 </script>
 </body>
 </html>
